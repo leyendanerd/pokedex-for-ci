@@ -13,8 +13,10 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-          
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
       - name: Install Dependecies
-      - run: npm install
-      - name: Lint now
-      - run: npm run eslint
+        run: npm install
+      - name: Lint
+        run: npm run eslint
